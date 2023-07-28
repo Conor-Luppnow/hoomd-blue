@@ -987,13 +987,13 @@ class ForceShiftedLJ(Pair):
         Type: `str`
     """
     _cpp_class_name = "PotentialPairForceShiftedLJ"
-    _accepted_modes = ("none",)
+    _accepted_modes = ("none","shift")
 
-    def __init__(self, nlist, default_r_cut=None):
+    def __init__(self, nlist, default_r_cut=None,mode='none'):
         super().__init__(nlist=nlist,
                          default_r_cut=default_r_cut,
                          default_r_on=0,
-                         mode='none')
+                         mode=mode)
 
         params = TypeParameter(
             'params', 'particle_types',
